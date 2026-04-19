@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 
 import '../../features/home/presentation/pages/home_page.dart';
+import '../../features/medication/medication_routes.dart';
 import '../../features/medical_records/medical_records_routes.dart';
 import '../../features/onboarding_auth/onboarding_auth_routes.dart';
 import 'routes.dart';
@@ -10,7 +11,7 @@ final class AppRouter {
   AppRouter._();
 
   static final GoRouter router = GoRouter(
-    initialLocation: AppRoutes.welcome,
+    initialLocation: AppRoutes.home,
     routes: [
       ...buildOnboardingAuthRoutes(),
       GoRoute(
@@ -18,6 +19,7 @@ final class AppRouter {
         builder: (context, state) => const HomePage(),
       ),
       ...buildMedicalRecordsRoutes(),
+      ...buildMedicationRoutes(),
     ],
   );
 }

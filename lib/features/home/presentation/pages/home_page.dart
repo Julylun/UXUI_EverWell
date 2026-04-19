@@ -94,14 +94,27 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         const SizedBox(height: 32),
-                        _MedicationAlertCard(d),
+                        _MedicationAlertCard(
+                          d,
+                          onTap: () =>
+                              context.push(AppRoutes.medicationReminderSchedule),
+                        ),
                         const SizedBox(height: 32),
                         _QuickAccessSection(
                           onMedical: () =>
                               context.push(AppRoutes.medicalRecordsList),
+                          onPrescription: () =>
+                              context.push(AppRoutes.medicationPrescriptions),
+                          onCabinet: () =>
+                              context.push(AppRoutes.medicationCabinet),
+                          onReminder: () =>
+                              context.push(AppRoutes.medicationReminderSchedule),
                         ),
                         const SizedBox(height: 32),
-                        _MedicationScheduleEmpty(),
+                        _MedicationScheduleEmpty(
+                          onAddPrescription: () =>
+                              context.push(AppRoutes.medicationAddPrescription),
+                        ),
                         const SizedBox(height: 32),
                         _RecentRecordCard(
                           visit: d.recentPreview,
@@ -116,9 +129,12 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            const EverwellBottomTabBar(
+            EverwellBottomTabBar(
               activeIndex: 2,
               tabAssets: EverwellTabMcpAssets.homeScreen,
+              onHome: () => context.go(AppRoutes.home),
+              onProfile: () => context.push(AppRoutes.medicalRecordsList),
+              onSettings: () => context.push(AppRoutes.medicationCabinet),
             ),
           ],
         ),
@@ -128,93 +144,109 @@ class _HomePageState extends State<HomePage> {
 }
 
 class _MedicationAlertCard extends StatelessWidget {
-  const _MedicationAlertCard(this.d);
+  const _MedicationAlertCard(this.d, {required this.onTap});
 
   final HomeDashboard d;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        color: AppColors.primary100,
+    return Material(
+      color: AppColors.primary100,
+      borderRadius: BorderRadius.circular(32),
+      child: InkWell(
         borderRadius: BorderRadius.circular(32),
-        boxShadow: const [
-          BoxShadow(
-            color: Color(0x0D000000),
-            offset: Offset(0, 1),
-            blurRadius: 2,
-          ),
-        ],
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            width: 48,
-            height: 48,
-            decoration: const BoxDecoration(
-              color: FigmaTokens.warning500,
-              shape: BoxShape.circle,
-            ),
-            child: Center(
-              child: Image.asset(
-                EverwellFigmaMcpRasterAssets.homeAlertBell,
-                width: 20,
-                height: 20,
-                fit: BoxFit.contain,
-                filterQuality: FilterQuality.medium,
+        onTap: onTap,
+        child: Container(
+          padding: const EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(32),
+            boxShadow: const [
+              BoxShadow(
+                color: Color(0x0D000000),
+                offset: Offset(0, 1),
+                blurRadius: 2,
               ),
-            ),
+            ],
           ),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  d.alertTitleLine1,
-                  style: EverwellFigmaText.quicksandSemi(18, color: FigmaTokens.black),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                width: 48,
+                height: 48,
+                decoration: const BoxDecoration(
+                  color: FigmaTokens.warning500,
+                  shape: BoxShape.circle,
                 ),
-                Text(
-                  d.alertTitleLine2,
-                  style: EverwellFigmaText.quicksandSemi(18, color: FigmaTokens.black),
+                child: Center(
+                  child: Image.asset(
+                    EverwellFigmaMcpRasterAssets.homeAlertBell,
+                    width: 20,
+                    height: 20,
+                    fit: BoxFit.contain,
+                    filterQuality: FilterQuality.medium,
+                  ),
                 ),
-                const SizedBox(height: 8),
-                Text(
-                  d.alertSubtitleLine1,
-                  style: EverwellFigmaText.quicksandRegular(14, color: FigmaTokens.black),
-                ),
-                Text(
-                  d.alertSubtitleLine2,
-                  style: EverwellFigmaText.quicksandRegular(14, color: FigmaTokens.black),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 8),
-            child: SizedBox(
-              width: 12,
-              height: 16,
-              child: Image.asset(
-                EverwellFigmaMcpRasterAssets.homeChevronRight,
-                fit: BoxFit.contain,
-                filterQuality: FilterQuality.medium,
               ),
-            ),
+              const SizedBox(width: 16),
+              Expanded(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      d.alertTitleLine1,
+                      style: EverwellFigmaText.quicksandSemi(18, color: FigmaTokens.black),
+                    ),
+                    Text(
+                      d.alertTitleLine2,
+                      style: EverwellFigmaText.quicksandSemi(18, color: FigmaTokens.black),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      d.alertSubtitleLine1,
+                      style: EverwellFigmaText.quicksandRegular(14, color: FigmaTokens.black),
+                    ),
+                    Text(
+                      d.alertSubtitleLine2,
+                      style: EverwellFigmaText.quicksandRegular(14, color: FigmaTokens.black),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8),
+                child: SizedBox(
+                  width: 12,
+                  height: 16,
+                  child: Image.asset(
+                    EverwellFigmaMcpRasterAssets.homeChevronRight,
+                    fit: BoxFit.contain,
+                    filterQuality: FilterQuality.medium,
+                  ),
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
 }
 
 class _QuickAccessSection extends StatelessWidget {
-  const _QuickAccessSection({required this.onMedical});
+  const _QuickAccessSection({
+    required this.onMedical,
+    required this.onPrescription,
+    required this.onCabinet,
+    required this.onReminder,
+  });
 
   final VoidCallback onMedical;
+  final VoidCallback onPrescription;
+  final VoidCallback onCabinet;
+  final VoidCallback onReminder;
 
   @override
   Widget build(BuildContext context) {
@@ -251,7 +283,7 @@ class _QuickAccessSection extends StatelessWidget {
               iconSize: const Size(18, 18),
               label: 'Đơn thuốc',
               labelColor: FigmaTokens.success800,
-              onTap: () => _stub(context),
+              onTap: onPrescription,
             ),
             _BentoTile(
               bgIcon: FigmaTokens.purpleCabinet,
@@ -259,7 +291,7 @@ class _QuickAccessSection extends StatelessWidget {
               iconSize: const Size(14, 18),
               label: 'Tủ thuốc',
               labelColor: FigmaTokens.purpleCabinet,
-              onTap: () => _stub(context),
+              onTap: onCabinet,
               compactLabel: true,
             ),
             _BentoTile(
@@ -268,17 +300,11 @@ class _QuickAccessSection extends StatelessWidget {
               iconSize: const Size(21, 20),
               label: 'Nhắc nhở',
               labelColor: FigmaTokens.redReminder,
-              onTap: () => _stub(context),
+              onTap: onReminder,
             ),
           ],
         ),
       ],
-    );
-  }
-
-  static void _stub(BuildContext context) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Tính năng sắp có')),
     );
   }
 }
@@ -357,6 +383,9 @@ class _BentoTile extends StatelessWidget {
 }
 
 class _MedicationScheduleEmpty extends StatelessWidget {
+  const _MedicationScheduleEmpty({required this.onAddPrescription});
+
+  final VoidCallback onAddPrescription;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -433,11 +462,7 @@ class _MedicationScheduleEmpty extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12),
                     ),
                   ),
-                  onPressed: () {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Thêm đơn thuốc — mock')),
-                    );
-                  },
+                  onPressed: onAddPrescription,
                   child: Text(
                     'Thêm đơn thuốc',
                     style: EverwellFigmaText.interSemi(16, color: AppColors.primary50)

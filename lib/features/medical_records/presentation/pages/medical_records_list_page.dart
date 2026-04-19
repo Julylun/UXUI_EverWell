@@ -136,9 +136,12 @@ class _MedicalRecordsListPageState extends State<MedicalRecordsListPage> {
                   },
                 ),
               ),
-              const EverwellBottomTabBar(
+              EverwellBottomTabBar(
                 activeIndex: 2,
                 tabAssets: EverwellTabMcpAssets.medicalList,
+                onHome: () => context.go(AppRoutes.home),
+                onProfile: () => context.go(AppRoutes.medicalRecordsList),
+                onSettings: () => context.push(AppRoutes.medicationCabinet),
               ),
             ],
           ),
