@@ -96,8 +96,9 @@ class _HomePageState extends State<HomePage> {
                         const SizedBox(height: 32),
                         _MedicationAlertCard(
                           d,
-                          onTap: () =>
-                              context.push(AppRoutes.medicationReminderSchedule),
+                          onTap: () => context.push(
+                            AppRoutes.medicationReminderSchedule,
+                          ),
                         ),
                         const SizedBox(height: 32),
                         _QuickAccessSection(
@@ -107,8 +108,9 @@ class _HomePageState extends State<HomePage> {
                               context.push(AppRoutes.medicationPrescriptions),
                           onCabinet: () =>
                               context.push(AppRoutes.medicationCabinet),
-                          onReminder: () =>
-                              context.push(AppRoutes.medicationReminderSchedule),
+                          onReminder: () => context.push(
+                            AppRoutes.medicationReminderSchedule,
+                          ),
                         ),
                         const SizedBox(height: 32),
                         _MedicationScheduleEmpty(
@@ -119,7 +121,9 @@ class _HomePageState extends State<HomePage> {
                         _RecentRecordCard(
                           visit: d.recentPreview,
                           onTap: () => context.push(
-                            AppRoutes.medicalRecordDetail(d.recentPreview.recordId),
+                            AppRoutes.medicalRecordDetail(
+                              d.recentPreview.recordId,
+                            ),
                           ),
                         ),
                         const SizedBox(height: 100),
@@ -132,7 +136,7 @@ class _HomePageState extends State<HomePage> {
             EverwellBottomTabBar(
               activeIndex: 2,
               tabAssets: EverwellTabMcpAssets.homeScreen,
-              onHome: () => context.go(AppRoutes.home),
+              onHome: () => context.push(AppRoutes.healthHeartInput),
               onProfile: () => context.push(AppRoutes.medicalRecordsList),
               onSettings: () => context.push(AppRoutes.medicationCabinet),
             ),
@@ -197,20 +201,32 @@ class _MedicationAlertCard extends StatelessWidget {
                   children: [
                     Text(
                       d.alertTitleLine1,
-                      style: EverwellFigmaText.quicksandSemi(18, color: FigmaTokens.black),
+                      style: EverwellFigmaText.quicksandSemi(
+                        18,
+                        color: FigmaTokens.black,
+                      ),
                     ),
                     Text(
                       d.alertTitleLine2,
-                      style: EverwellFigmaText.quicksandSemi(18, color: FigmaTokens.black),
+                      style: EverwellFigmaText.quicksandSemi(
+                        18,
+                        color: FigmaTokens.black,
+                      ),
                     ),
                     const SizedBox(height: 8),
                     Text(
                       d.alertSubtitleLine1,
-                      style: EverwellFigmaText.quicksandRegular(14, color: FigmaTokens.black),
+                      style: EverwellFigmaText.quicksandRegular(
+                        14,
+                        color: FigmaTokens.black,
+                      ),
                     ),
                     Text(
                       d.alertSubtitleLine2,
-                      style: EverwellFigmaText.quicksandRegular(14, color: FigmaTokens.black),
+                      style: EverwellFigmaText.quicksandRegular(
+                        14,
+                        color: FigmaTokens.black,
+                      ),
                     ),
                   ],
                 ),
@@ -257,7 +273,10 @@ class _QuickAccessSection extends StatelessWidget {
           padding: const EdgeInsets.only(left: 4),
           child: Text(
             'Truy cập nhanh',
-            style: EverwellFigmaText.quicksandSemi(20, color: FigmaTokens.black),
+            style: EverwellFigmaText.quicksandSemi(
+              20,
+              color: FigmaTokens.black,
+            ),
           ),
         ),
         const SizedBox(height: 16),
@@ -370,8 +389,10 @@ class _BentoTile extends StatelessWidget {
                 label,
                 textAlign: TextAlign.center,
                 style: compactLabel
-                    ? EverwellFigmaText.interSemi(16, color: labelColor)
-                        .copyWith(height: 24 / 16)
+                    ? EverwellFigmaText.interSemi(
+                        16,
+                        color: labelColor,
+                      ).copyWith(height: 24 / 16)
                     : EverwellFigmaText.quicksandSemi(18, color: labelColor),
               ),
             ],
@@ -398,11 +419,17 @@ class _MedicationScheduleEmpty extends StatelessWidget {
             children: [
               Text(
                 'Lịch uống thuốc hôm nay',
-                style: EverwellFigmaText.quicksandSemi(20, color: FigmaTokens.black),
+                style: EverwellFigmaText.quicksandSemi(
+                  20,
+                  color: FigmaTokens.black,
+                ),
               ),
               Text(
                 'Xem tất cả',
-                style: EverwellFigmaText.quicksandSemi(14, color: AppColors.primary900),
+                style: EverwellFigmaText.quicksandSemi(
+                  14,
+                  color: AppColors.primary900,
+                ),
               ),
             ],
           ),
@@ -439,7 +466,10 @@ class _MedicationScheduleEmpty extends StatelessWidget {
               Text(
                 'Bạn không có lịch uống thuốc nào',
                 textAlign: TextAlign.center,
-                style: EverwellFigmaText.quicksandSemi(18, color: FigmaTokens.black),
+                style: EverwellFigmaText.quicksandSemi(
+                  18,
+                  color: FigmaTokens.black,
+                ),
               ),
               const SizedBox(height: 8),
               Text(
@@ -457,7 +487,10 @@ class _MedicationScheduleEmpty extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.primary900,
                     foregroundColor: AppColors.primary50,
-                    padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 32),
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 12,
+                      horizontal: 32,
+                    ),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -465,8 +498,10 @@ class _MedicationScheduleEmpty extends StatelessWidget {
                   onPressed: onAddPrescription,
                   child: Text(
                     'Thêm đơn thuốc',
-                    style: EverwellFigmaText.interSemi(16, color: AppColors.primary50)
-                        .copyWith(height: 24 / 16),
+                    style: EverwellFigmaText.interSemi(
+                      16,
+                      color: AppColors.primary50,
+                    ).copyWith(height: 24 / 16),
                   ),
                 ),
               ),
@@ -493,7 +528,10 @@ class _RecentRecordCard extends StatelessWidget {
           padding: const EdgeInsets.only(left: 4),
           child: Text(
             'Hồ sơ gần đây',
-            style: EverwellFigmaText.quicksandSemi(18, color: FigmaTokens.black),
+            style: EverwellFigmaText.quicksandSemi(
+              18,
+              color: FigmaTokens.black,
+            ),
           ),
         ),
         const SizedBox(height: 16),
@@ -545,11 +583,17 @@ class _RecentRecordCard extends StatelessWidget {
                         children: [
                           Text(
                             visit.titleLine1,
-                            style: EverwellFigmaText.interBold(16, color: FigmaTokens.black),
+                            style: EverwellFigmaText.interBold(
+                              16,
+                              color: FigmaTokens.black,
+                            ),
                           ),
                           Text(
                             visit.titleLine2,
-                            style: EverwellFigmaText.interBold(16, color: FigmaTokens.black),
+                            style: EverwellFigmaText.interBold(
+                              16,
+                              color: FigmaTokens.black,
+                            ),
                           ),
                           const SizedBox(height: 4),
                           Text(

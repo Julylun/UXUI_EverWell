@@ -3,17 +3,20 @@
 abstract final class EverwellFigmaMcpRasterAssets {
   // —— B1 Trang chủ ——
   static const homeAlertBell = 'assets/images/figma_mcp/home/alert_bell.png';
-  static const homeChevronRight = 'assets/images/figma_mcp/home/chevron_right.png';
+  static const homeChevronRight =
+      'assets/images/figma_mcp/home/chevron_right.png';
   static const homeBentoMedicalRecords =
       'assets/images/figma_mcp/home/bento_medical_records.png';
   static const homeBentoPrescriptions =
       'assets/images/figma_mcp/home/bento_prescriptions.png';
   static const homeBentoMedicineCabinet =
       'assets/images/figma_mcp/home/bento_medicine_cabinet.png';
-  static const homeBentoReminders = 'assets/images/figma_mcp/home/bento_reminders.png';
+  static const homeBentoReminders =
+      'assets/images/figma_mcp/home/bento_reminders.png';
   static const homeScheduleEmptyCalendar =
       'assets/images/figma_mcp/home/schedule_empty_calendar.png';
-  static const homeRecentVisitBag = 'assets/images/figma_mcp/home/recent_visit_bag.png';
+  static const homeRecentVisitBag =
+      'assets/images/figma_mcp/home/recent_visit_bag.png';
 
   // Tab (B1 — mặc định app)
   static const tabHome = 'assets/images/figma_mcp/tab/home.png';
@@ -41,7 +44,8 @@ abstract final class EverwellFigmaMcpRasterAssets {
       'assets/images/figma_mcp/medical_records/c1_row_clip.png';
   static const mrC1RowChevron =
       'assets/images/figma_mcp/medical_records/c1_row_chevron.png';
-  static const mrC1FabPlus = 'assets/images/figma_mcp/medical_records/c1_fab_plus.png';
+  static const mrC1FabPlus =
+      'assets/images/figma_mcp/medical_records/c1_fab_plus.png';
   static const mrC1TabHome =
       'assets/images/figma_mcp/medical_records/c1_tab_home.png';
   static const mrC1TabSearch =
@@ -130,15 +134,20 @@ abstract final class EverwellFigmaMcpRasterAssets {
       'assets/images/figma_mcp/medication/header_back_arrow.png';
   static const medSearch = 'assets/images/figma_mcp/medication/search.png';
   static const medFilter = 'assets/images/figma_mcp/medication/filter.png';
-  static const medRowDoctor = 'assets/images/figma_mcp/medication/row_doctor.png';
-  static const medRowHospital = 'assets/images/figma_mcp/medication/row_hospital.png';
+  static const medRowDoctor =
+      'assets/images/figma_mcp/medication/row_doctor.png';
+  static const medRowHospital =
+      'assets/images/figma_mcp/medication/row_hospital.png';
   static const medTagPill = 'assets/images/figma_mcp/medication/tag_pill.png';
-  static const medRowChevron = 'assets/images/figma_mcp/medication/row_chevron.png';
+  static const medRowChevron =
+      'assets/images/figma_mcp/medication/row_chevron.png';
   static const medStatsCalendar =
       'assets/images/figma_mcp/medication/stats_calendar.png';
-  static const medStatsDone = 'assets/images/figma_mcp/medication/stats_done.png';
+  static const medStatsDone =
+      'assets/images/figma_mcp/medication/stats_done.png';
   static const medFabPlus = 'assets/images/figma_mcp/medication/fab_plus.png';
-  static const medHealthTip = 'assets/images/figma_mcp/medication/health_tip.png';
+  static const medHealthTip =
+      'assets/images/figma_mcp/medication/health_tip.png';
   static const medReminderIllustration =
       'assets/images/figma_mcp/medication/reminder_illustration.png';
   static const medDoctorAvatar =
@@ -147,18 +156,23 @@ abstract final class EverwellFigmaMcpRasterAssets {
       'assets/images/figma_mcp/medication/detail_summary_icon.png';
   static const medDetailHistory =
       'assets/images/figma_mcp/medication/detail_history.png';
-  static const medDetailCall = 'assets/images/figma_mcp/medication/detail_call.png';
+  static const medDetailCall =
+      'assets/images/figma_mcp/medication/detail_call.png';
   static const medDetailLinkRecord =
       'assets/images/figma_mcp/medication/detail_link_record.png';
   static const medDetailChevron =
       'assets/images/figma_mcp/medication/detail_chevron.png';
-  static const medDetailInfo = 'assets/images/figma_mcp/medication/detail_info.png';
-  static const medDetailMed1 = 'assets/images/figma_mcp/medication/detail_med1.png';
-  static const medDetailMed2 = 'assets/images/figma_mcp/medication/detail_med2.png';
+  static const medDetailInfo =
+      'assets/images/figma_mcp/medication/detail_info.png';
+  static const medDetailMed1 =
+      'assets/images/figma_mcp/medication/detail_med1.png';
+  static const medDetailMed2 =
+      'assets/images/figma_mcp/medication/detail_med2.png';
   static const medTimeMorning =
       'assets/images/figma_mcp/medication/time_morning.png';
   static const medTimeNoon = 'assets/images/figma_mcp/medication/time_noon.png';
-  static const medTimeNight = 'assets/images/figma_mcp/medication/time_night.png';
+  static const medTimeNight =
+      'assets/images/figma_mcp/medication/time_night.png';
   static const medNoteWarning =
       'assets/images/figma_mcp/medication/note_warning.png';
   static const medCtaBell = 'assets/images/figma_mcp/medication/cta_bell.png';
@@ -172,16 +186,39 @@ abstract final class EverwellFigmaMcpRasterAssets {
       'assets/images/figma_mcp/medication/add_upload_gallery.png';
   static const medAddIllustration =
       'assets/images/figma_mcp/medication/add_illustration.png';
-  static const medAddAiStar = 'assets/images/figma_mcp/medication/add_ai_star.png';
+  static const medAddAiStar =
+      'assets/images/figma_mcp/medication/add_ai_star.png';
   static const medChooseQr = 'assets/images/figma_mcp/medication/choose_qr.png';
   static const medChooseManual =
       'assets/images/figma_mcp/medication/choose_manual.png';
-  static const medInputPhoto = 'assets/images/figma_mcp/medication/input_photo.png';
-  static const medInputCapsule = 'assets/images/figma_mcp/medication/input_capsule.png';
+  static const medInputPhoto =
+      'assets/images/figma_mcp/medication/input_photo.png';
+  static const medInputCapsule =
+      'assets/images/figma_mcp/medication/input_capsule.png';
   static const medDetailHeroImage =
       'assets/images/figma_mcp/medication/detail_hero_image.png';
   static const medEditHeroPill =
       'assets/images/figma_mcp/medication/edit_hero_pill.png';
+
+  // —— WS-E health tracking (phase 1: E1/E2) ——
+  static const healthE1BackArrow =
+      'assets/images/figma_mcp/health/e1_back_arrow.png';
+  static const healthE1Minus = 'assets/images/figma_mcp/health/e1_minus.png';
+  static const healthE1Plus = 'assets/images/figma_mcp/health/e1_plus.png';
+  static const healthE1Calendar =
+      'assets/images/figma_mcp/health/e1_calendar.png';
+  static const healthE1Clock = 'assets/images/figma_mcp/health/e1_clock.png';
+  static const healthE1StatusRest =
+      'assets/images/figma_mcp/health/e1_status_rest.png';
+  static const healthE1StatusActivity =
+      'assets/images/figma_mcp/health/e1_status_activity.png';
+  static const healthE1Save = 'assets/images/figma_mcp/health/e1_save.png';
+  static const healthE1Cancel = 'assets/images/figma_mcp/health/e1_cancel.png';
+
+  static const healthE2BackArrow =
+      'assets/images/figma_mcp/health/e2_back_arrow.png';
+  static const healthE2Heart =
+      'assets/images/figma_mcp/health/e2_heart_badge.png';
 }
 
 /// Bộ 5 icon tab theo từng màn Figma (URL MCP khác nhau giữa B1 / C1 / C2 / C4).

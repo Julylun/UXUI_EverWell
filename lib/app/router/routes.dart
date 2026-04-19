@@ -37,7 +37,8 @@ abstract final class AppRoutes {
   static const medicationPrescriptions = '/medication/prescriptions';
   static const medicationPrescriptionsCompleted =
       '/medication/prescriptions/completed';
-  static const medicationPrescriptionDetail = '/medication/prescriptions/detail';
+  static const medicationPrescriptionDetail =
+      '/medication/prescriptions/detail';
   static const medicationAddPrescription = '/medication/prescriptions/add';
   static const medicationCreateReminder = '/medication/reminders/create';
   static const medicationAddToCabinet = '/medication/cabinet/add-from-rx';
@@ -50,4 +51,8 @@ abstract final class AppRoutes {
   static const medicationReminderSettings = '/medication/reminders/settings';
   static const medicationAdherenceHistory = '/medication/reminders/adherence';
   static const medicationConfirmTaken = '/medication/reminders/confirm';
+
+  // WS-E — Health tracking (E1..E7, phase 1 starts with E1/E2).
+  static const healthHeartInput = '/health/heart/input';
+  static const healthHeartDetail = '/health/heart/detail';
 }

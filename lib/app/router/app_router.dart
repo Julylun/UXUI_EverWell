@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 
+import '../../features/health_tracking/health_tracking_routes.dart';
 import '../../features/home/presentation/pages/home_page.dart';
 import '../../features/medication/medication_routes.dart';
 import '../../features/medical_records/medical_records_routes.dart';
@@ -20,6 +21,7 @@ final class AppRouter {
       ),
       ...buildMedicalRecordsRoutes(),
       ...buildMedicationRoutes(),
+      ...buildHealthTrackingRoutes(),
     ],
   );
 }

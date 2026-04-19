@@ -69,6 +69,7 @@ flutter:
     - assets/images/figma_mcp/tab/
     - assets/images/figma_mcp/medical_records/
     - assets/images/figma_mcp/medication/
+    - assets/images/figma_mcp/health/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
