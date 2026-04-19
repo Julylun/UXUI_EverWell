@@ -1,7 +1,8 @@
 import 'package:go_router/go_router.dart';
 
+import '../../features/home/presentation/pages/home_page.dart';
+import '../../features/medical_records/medical_records_routes.dart';
 import '../../features/onboarding_auth/onboarding_auth_routes.dart';
-import '../presentation/home_placeholder_page.dart';
 import 'routes.dart';
 
 /// Application router. WS-A registers its subtree via [buildOnboardingAuthRoutes].
@@ -14,8 +15,9 @@ final class AppRouter {
       ...buildOnboardingAuthRoutes(),
       GoRoute(
         path: AppRoutes.home,
-        builder: (context, state) => const HomePlaceholderPage(),
+        builder: (context, state) => const HomePage(),
       ),
+      ...buildMedicalRecordsRoutes(),
     ],
   );
 }
