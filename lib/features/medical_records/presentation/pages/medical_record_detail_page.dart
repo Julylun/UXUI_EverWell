@@ -109,11 +109,8 @@ class _MedicalRecordDetailPageState extends State<MedicalRecordDetailPage> {
                             borderRadius: BorderRadius.circular(12),
                           ),
                         ),
-                        onPressed: () {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('Đơn thuốc — WS-D')),
-                          );
-                        },
+                        onPressed: () =>
+                            context.push(AppRoutes.medicationPrescriptions),
                         child: Text(
                           'Xem đơn thuốc',
                           style: EverwellFigmaText.interSemi(16, color: AppColors.white)
@@ -126,9 +123,12 @@ class _MedicalRecordDetailPageState extends State<MedicalRecordDetailPage> {
               },
             ),
           ),
-          const EverwellBottomTabBar(
+          EverwellBottomTabBar(
             activeIndex: 2,
             tabAssets: EverwellTabMcpAssets.medicalDetail,
+            onHome: () => context.go(AppRoutes.home),
+            onProfile: () => context.go(AppRoutes.medicalRecordsList),
+            onSettings: () => context.push(AppRoutes.medicationCabinet),
           ),
         ],
       ),

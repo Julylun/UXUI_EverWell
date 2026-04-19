@@ -1,3 +1,6 @@
+import 'package:go_router/go_router.dart';
+
+import '../../../../app/router/routes.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/presentation/theme/app_colors.dart';
@@ -119,9 +122,12 @@ class _MedicalRecordAttachmentsPageState
               },
             ),
           ),
-          const EverwellBottomTabBar(
+          EverwellBottomTabBar(
             activeIndex: 2,
             tabAssets: EverwellTabMcpAssets.medicalAttachments,
+            onHome: () => context.go(AppRoutes.home),
+            onProfile: () => context.go(AppRoutes.medicalRecordsList),
+            onSettings: () => context.push(AppRoutes.medicationCabinet),
           ),
         ],
       ),

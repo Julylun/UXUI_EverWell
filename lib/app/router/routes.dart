@@ -32,4 +32,22 @@ abstract final class AppRoutes {
   /// WS-C — Tài liệu đính kèm (C4 `806:10601`).
   static String medicalRecordAttachments(String recordId) =>
       '/medical-records/$recordId/attachments';
+
+  // WS-D — Medication & reminders (D1..D15).
+  static const medicationPrescriptions = '/medication/prescriptions';
+  static const medicationPrescriptionsCompleted =
+      '/medication/prescriptions/completed';
+  static const medicationPrescriptionDetail = '/medication/prescriptions/detail';
+  static const medicationAddPrescription = '/medication/prescriptions/add';
+  static const medicationCreateReminder = '/medication/reminders/create';
+  static const medicationAddToCabinet = '/medication/cabinet/add-from-rx';
+  static const medicationCabinet = '/medication/cabinet';
+  static const medicationChooseAddMethod = '/medication/cabinet/choose-add';
+  static const medicationInputMedicine = '/medication/cabinet/input';
+  static const medicationMedicineDetail = '/medication/cabinet/detail';
+  static const medicationEditMedicine = '/medication/cabinet/edit';
+  static const medicationReminderSchedule = '/medication/reminders/schedule';
+  static const medicationReminderSettings = '/medication/reminders/settings';
+  static const medicationAdherenceHistory = '/medication/reminders/adherence';
+  static const medicationConfirmTaken = '/medication/reminders/confirm';
 }
