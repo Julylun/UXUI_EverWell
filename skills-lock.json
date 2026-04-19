@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "skills": {
+    "flutter-animating-apps": {
+      "source": "flutter/skills",
+      "sourceType": "github",
+      "computedHash": "85c3483e4b5da7abefc7de8ad8fb4211b6680a2ba03e727aa000ad139e0b9565"
+    },
+    "flutter-architecting-apps": {
+      "source": "flutter/skills",
+      "sourceType": "github",
+      "computedHash": "eb8640b807ea631973fa259880abf07d0cb0f26d327da9970e56fbfc95650ada"
+    },
+    "flutter-building-forms": {
+      "source": "flutter/skills",
+      "sourceType": "github",
+      "computedHash": "7e7558b10bc6c832151ab344b257f207134d2e00ecb1e78dd7b5ca4b22052c84"
+    },
+    "flutter-building-layouts": {
+      "source": "flutter/skills",
+      "sourceType": "github",
+      "computedHash": "2fc5b3828e53902e4e61d79d2bbd5557409e27e9713ea0aa4efb307a6c9cda43"
+    },
+    "flutter-testing-apps": {
+      "source": "flutter/skills",
+      "sourceType": "github",
+      "computedHash": "a27066ec569ff16a1af847c8a13ef7411375d01ab9f768708822c4d993ab52ac"
+    }
+  }
+}
